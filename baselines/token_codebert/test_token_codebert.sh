@@ -1,0 +1,15 @@
+python train_token_codebert.py \
+    --model_name=token_codebert.bin \
+    --output_dir=./saved_models \
+    --do_test \
+    --train_data_file=../../data/processed_train.csv \
+    --eval_data_file=../../data/processed_val.csv \
+    --test_data_file=../../data/processed_test.csv \
+    --epochs 20 \
+    --encoder_block_size 512 \
+    --train_batch_size 32 \
+    --eval_batch_size 32 \
+    --learning_rate 2e-5 \
+    --max_grad_norm 1.0 \
+    --evaluate_during_training \
+    --seed 123456  2>&1 | tee test_token_codebert.log

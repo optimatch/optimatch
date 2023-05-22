@@ -1,0 +1,18 @@
+(base) michael@m4:~/HDD18TB/vp_codebook_work/baselines/ReGVD_Devign$ sh test_regvd.sh 
+using default unweighted graph
+04/17/2023 17:03:55 - WARNING - __main__ -   device: cuda:1, n_gpu: 1
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.decoder.weight', 'lm_head.dense.bias', 'lm_head.dense.weight', 'lm_head.layer_norm.bias', 'lm_head.decoder.bias', 'lm_head.layer_norm.weight', 'lm_head.bias']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+04/17/2023 17:03:56 - INFO - __main__ -   Training/evaluation parameters Namespace(model='GNNs', hidden_size=768, feature_dim_size=768, num_GNN_layers=2, gnn='ReGCN', format='uni', window_size=3, remove_residual=False, att_op='mul', training_percent=1.0, alpha_weight=1.0, num_classes=1, train_data_file='../../data/processed_train.csv', output_dir='./saved_models', use_logit_adjustment=False, tau=1, use_focal_loss=False, model_type='bert', block_size=512, eval_data_file='../../data/processed_val.csv', test_data_file='../../data/processed_test.csv', model_name='regvd_model.bin', model_name_or_path='microsoft/graphcodebert-base', config_name='', use_non_pretrained_model=False, tokenizer_name='microsoft/graphcodebert-base', code_length=256, do_train=False, do_eval=False, do_test=True, evaluate_during_training=True, do_token_level_eval=False, reasoning_method='attention', train_batch_size=128, eval_batch_size=128, gradient_accumulation_steps=1, learning_rate=0.0001, weight_decay=0.0, adam_epsilon=1e-08, max_grad_norm=1.0, max_steps=-1, warmup_steps=0, seed=123456, epochs=100, n_gpu=1, device=device(type='cuda', index=1))
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 18598/18598 [00:17<00:00, 1039.73it/s]
+04/17/2023 17:04:16 - INFO - __main__ -   ***** Running evaluation *****
+04/17/2023 17:04:16 - INFO - __main__ -     Num examples = 18598
+04/17/2023 17:04:16 - INFO - __main__ -     Batch size = 128
+04/17/2023 17:05:12 - INFO - __main__ -   ***** Test results *****
+04/17/2023 17:05:12 - INFO - __main__ -     test_acc = 0.9712
+04/17/2023 17:05:12 - INFO - __main__ -     test_f1 = 0.6109
+04/17/2023 17:05:12 - INFO - __main__ -     test_precision = 0.7792
+04/17/2023 17:05:12 - INFO - __main__ -     test_recall = 0.5024
