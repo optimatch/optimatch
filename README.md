@@ -159,5 +159,5 @@ pip install -r requirements.txt
 
 ## Citation
 ```bash
-under review at NeurIPS 2023
+under review at AAAI 2024
 ```
