@@ -4,9 +4,6 @@
   
 </div>
 
-![OPTIMATCH1](img/cover_1.png)
-
-![OPTIMATCH2](img/cover_2.png)
 
 <p align="center">
   </a>
