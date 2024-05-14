@@ -156,5 +156,4 @@ pip install -r requirements.txt
 
 ## Citation
 ```bash
-under review at ICML 2024
 ```
